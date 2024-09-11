@@ -18,7 +18,7 @@ class PIDController {
     // Function to compute the PID output
     void compute() {
       unsigned long now = millis();
-      float timeChange = (now - lastTime) / 1000.0; // Time difference in seconds
+      float timeChange = (now - lastTime) / 1000.0; 
 
       float error = setpoint - input;
 
@@ -52,8 +52,8 @@ class PIDController {
     }
 };
 
-// Exponential Smoothing Filter Definition
-float alpha = 0.2;  // Smoothing factor (between 0 and 1)
+
+float alpha = 0.2;  // Smoothing factor 
 float smoothedOutput = 0;  // Filtered output
 
 // Function to apply the Exponential Smoothing Filter
@@ -65,7 +65,7 @@ void applySoftStart(float rawOutput) {
 
 int motorPin = 9;  // Motor control PWM pin
 
-// Create an instance of the PID controller
+
 PIDController motorPID(2.0, 0.5, 1.0);  
 
 void setup() {
@@ -74,7 +74,7 @@ void setup() {
 }
 
 void loop() {
-  // Simulated motor speed reading from a sensor 
+ 
   motorPID.setInput(analogRead(A0) / 4.0);  
 
 
